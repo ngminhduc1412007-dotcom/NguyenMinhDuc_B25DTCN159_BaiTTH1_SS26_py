@@ -7,7 +7,7 @@ class Employee(ABC):
                 
     def display_info(self):
         emp_type = 'Full-time'
-        if isinstance(self, PartTimeEmployee):
+        if isinstance(self, PartTimeEmployee): # kiểm tra thuộc về class nào hay không
             emp_type = 'Part-time'
         elif isinstance(self, InternEmployee):
             emp_type = 'Intern'
@@ -15,7 +15,7 @@ class Employee(ABC):
         print(f"Ma NV: {self.employee_id:<5} | Ho ten: {self.name:<15} | Loai: {emp_type}")
         
     @abstractmethod
-    def calculate_salary(self): 
+    def calculate_salary(self):     
         pass
     
 class FullTimeEmployee(Employee):
